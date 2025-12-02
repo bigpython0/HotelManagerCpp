@@ -5,6 +5,14 @@
 
 using namespace std;
 
+int main() {
+    Hotel hotel("Bond");
+    Staff staff1("Robin", "1234", hotel);
+
+    staff1.bookRoom();
+    
+};
+
 class Hotel {
     string name;
     int maxStaffNum;
@@ -98,8 +106,6 @@ class Room {
         }
 };
 
-        
-
 class Reservation {
     Date reservedFrom; 
     Date reservedUntil;
@@ -145,9 +151,10 @@ class RoomHandler {
 class Staff {
     string name;
     string password;
+    Hotel& hotel;
 
     public:
-        Staff(string n, string p) : name(n), password(p) {};
+        Staff(string n, string p, Hotel& h) : name(n), password(p), hotel(h) {};
 
         bool bookRoom() {
             int roomNum;
@@ -170,7 +177,7 @@ class Staff {
             cout << "\n Name: ";
             cin >> tempString;
 
-            handler.bookRoom(roomNum, from, until, tempString);
+            hotel.bookRoom(roomNum, from, until, tempString);
         }
 };
 

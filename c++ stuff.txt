@@ -1,0 +1,42 @@
+Random Int Generator
+int random(int min, int max) //range : [min, max]
+{
+   static bool first = true;
+   if (first) 
+   {  
+      srand( time(NULL) ); //seeding for the first time only!
+      first = false;
+   }
+   return min + rand() % (( max + 1 ) - min);
+}
+
+
+_________________________
+
+USE FOR PRINTING AND STRING DECLARATION
+using namespace std;
+
+otherwise you have to do std::cout or std::string
+
+_________________________
+Passing Array for constructor:
+in Main: 
+Student students[] = {
+        {"Justin", 2.3},
+        {"Anna", 2.1},
+        {"Josy", 3.9},
+    };
+
+Student* studentArrayPointer = students;
+StudentManager mg(students, studentAmount);
+
+in Class: 
+StudentManager(Student array[], int aS) {
+   arr = array;
+}
+
+________________________________
+Wenn man nur Pointer auf Objekt hat also z.b. 
+Student* best = &arr[0];
+
+muss!? man auf Student Methode zugreifen indem man best->getName benutzt
