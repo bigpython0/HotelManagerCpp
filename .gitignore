@@ -1,0 +1,5 @@
+# Ignoriere alle Ordner und Dateien, die nicht zum HotelManager-Projekt gehören
+/.vscode/
+/Beginner_shi/
+/Student Grade System/
+/c++ stuff.txt
