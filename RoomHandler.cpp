@@ -1,13 +1,15 @@
+#include <RoomHandler.h>
+
 class RoomHandler {
-    vector<Room> rooms;
+    std::vector<Room> rooms;
     public:
-        RoomHandler(vector<Room> roomArray) :
+        RoomHandler(std::vector<Room> roomArray) :
             rooms(roomArray)
         {};
 
         RoomHandler() {};
 
-        void setRooms(vector<Room>& roomArray) {
+        void setRooms(std::vector<Room>& roomArray) {
             rooms = roomArray;
         }
 
@@ -21,7 +23,7 @@ class RoomHandler {
             return nullptr;
         }
 
-        bool bookRoom(int num, Date from, Date until, string name) {
+        bool bookRoom(int num, Date from, Date until, std::string name) {
             Room* roomToBook = getRoomByNum(num);
             if (roomToBook != nullptr) {
             if(roomToBook->setOccupied(Reservation(from, until, name))) {

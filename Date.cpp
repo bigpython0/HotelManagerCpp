@@ -5,10 +5,10 @@ class Date {
     int day;
     int month;
     int year;
-    string date;
+    std::string date;
 
     public:
-        Date(string d) : date(d){
+        Date(std::string d) : date(d){
             day = std::stoi(d.substr(0,2));
             month = std::stoi(d.substr(3,2));
             year = std::stoi(d.substr(6,4));
@@ -18,7 +18,7 @@ class Date {
 
         }
 
-        void setDate(string d) {
+        void setDate(std::string d) {
             day = std::stoi(d.substr(0,2));
             month = std::stoi(d.substr(3,2));
             year = std::stoi(d.substr(6,4));

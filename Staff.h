@@ -4,6 +4,7 @@
 #include <Hotel.h>
 #include <string>
 #include <iostream>
+#include <Reservation.h>
 
 class Staff {
 private:
@@ -12,7 +13,7 @@ private:
     Hotel& hotel;
 
 public:
-    Staff(std::string n, std::string p. Hotel& h);
+    Staff(std::string n, std::string p, Hotel& h);
     bool bookRoom();
 };
 

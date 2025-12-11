@@ -7,14 +7,22 @@ class Room {
     float cost;
     int roomNum;
     
-    optional<Reservation> currentReservation;
+    std::optional<Reservation> currentReservation;
     
     public:
         Room(int w, float x, int num ) : //, Reservation y
             isOccupied(false),
             guestNumber(w),
             cost(x),
-            roomNum(num){}
+            roomNum(num){};
+        
+        static std::vector<Room> createDefaultRooms() {
+            return {
+                Room(2, 99.9f, 100),
+                Room(2, 99.9f, 101),
+                Room(4, 150.0f, 102)
+            };
+        }
 
         bool setOccupied(Reservation reservation){
             if(isOccupied == false) {
