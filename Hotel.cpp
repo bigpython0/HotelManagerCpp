@@ -1,4 +1,4 @@
-#include <Hotel.h>
+#include "Hotel.h"
 
 class Hotel {
     std::string name;

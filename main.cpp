@@ -1,8 +1,8 @@
-#include <Hotel.h>
-#include <Room.h>
-#include <Reservation.h>
-#include <RoomHandler.h>
-#include <Staff.h>
+#include "Hotel.h"
+#include "Room.h"
+#include "Reservation.h"
+#include "RoomHandler.h"
+#include "Staff.h"
 
 int main() {
     Hotel hotel("Bond");

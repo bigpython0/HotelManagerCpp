@@ -1,13 +1,10 @@
-#include <Staff.h>
+#include "Staff.h"
 
 
-class Staff {
-    std::string name;
-    std::string password;
-    Hotel& hotel;
+
 
     public:
-        Staff(std::string n, std::string p, Hotel& h) : name(n), password(p), hotel(h) {};
+        Staff::Staff(std::string n, std::string p, Hotel& h) : name(n), password(p), hotel(h) {};
 
         bool bookRoom() {
             int roomNum;
@@ -32,4 +29,3 @@ class Staff {
 
             hotel.bookRoom(roomNum, from, until, tempString);
         }
-};

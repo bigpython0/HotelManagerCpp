@@ -1,10 +1,10 @@
 #ifndef STAFF_H
 #define STAFF_H
 
-#include <Hotel.h>
+#include "Hotel.h"
 #include <string>
 #include <iostream>
-#include <Reservation.h>
+#include "Reservation.h"
 
 class Staff {
 private:
