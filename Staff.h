@@ -14,7 +14,7 @@ private:
 
 public:
     Staff(std::string n, std::string p, Hotel& h);
-    bool bookRoom();
+    bool bookRoom(Hotel& hotel);
 };
 
 #endif

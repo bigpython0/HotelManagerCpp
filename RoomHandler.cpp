@@ -1,34 +1,35 @@
 #include "RoomHandler.h"
 
-class RoomHandler {
-    std::vector<Room> rooms;
-    public:
-        RoomHandler(std::vector<Room> roomArray) :
-            rooms(roomArray)
-        {};
 
-        RoomHandler() {};
+RoomHandler::RoomHandler(std::vector<Room> roomArray) :
+    rooms(roomArray)
+{};
 
-        void setRooms(std::vector<Room>& roomArray) {
-            rooms = roomArray;
+RoomHandler::RoomHandler() {};
+
+void RoomHandler::setRooms(std::vector<Room>& roomArray) {
+    rooms = roomArray;
+}
+
+Room* RoomHandler::getRoomByNum(int num) {
+    for(size_t i = 0; i<rooms.size(); i++) {
+        if(rooms[i].getRoomNum() == num) {
+            return &rooms[i];
         }
+    }
 
-        Room* getRoomByNum(int num) {
-            for(size_t i = 0; i<rooms.size(); i++) {
-                if(rooms[i].getRoomNum() == num) {
-                    return &rooms[i];
-                }
-            }
+    return nullptr;
+}
 
-            return nullptr;
+bool RoomHandler::bookRoom(int num, Date from, Date until, std::string name) {
+    Room* roomToBook = getRoomByNum(num);
+    if (roomToBook != nullptr) {
+        if(roomToBook->setOccupied(Reservation(from, until, name))) {
+            return true;
+        } else {
+            return false;
         }
-
-        bool bookRoom(int num, Date from, Date until, std::string name) {
-            Room* roomToBook = getRoomByNum(num);
-            if (roomToBook != nullptr) {
-            if(roomToBook->setOccupied(Reservation(from, until, name))) {
-                return true;
-            }
-            }
-        }
-};
+    }else {
+        return false;
+    }
+}

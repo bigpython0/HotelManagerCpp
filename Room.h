@@ -17,7 +17,7 @@ private:
 public:
     Room(int w, float x, int num);
     static std::vector<Room> createDefaultRooms();
-    bool setOccupied(Reservation reservation);
+    bool setOccupied(Reservation newReservation);
     void setUnoccupied();
     int getRoomNum();
 };

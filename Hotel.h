@@ -1,16 +1,17 @@
 #ifndef HOTEL_H
 #define HOTEL_H
 
-#include <string>
-#include <vector>
 #include "Room.h"
 #include "Date.h"
+#include <string>
+#include <vector>
+
 
 class Hotel {
 private:
     std::string name;
     int maxStaffNum;
-    int const maxRooms;
+    int const maxRooms = 5;
     std::vector<Room> rooms;
 public:
     Hotel(std::string n);
